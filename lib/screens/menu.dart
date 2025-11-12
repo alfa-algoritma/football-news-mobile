@@ -27,8 +27,7 @@ class MyHomePage extends StatelessWidget {
         ),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
-
-      drawer: const LeftDrawer(), 
+      drawer: const LeftDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -78,7 +77,6 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-// Biarkan InfoCard tetap di sini
 class InfoCard extends StatelessWidget {
   final String title;
   final String content;
@@ -90,8 +88,7 @@ class InfoCard extends StatelessWidget {
     return Card(
       elevation: 2.0,
       child: Container(
-        // Lebar diatur agar lebih responsif
-        width: MediaQuery.of(context).size.width / 3.5, 
+        width: MediaQuery.of(context).size.width / 3.5,
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [

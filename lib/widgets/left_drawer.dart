@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:football_news/screens/menu.dart';
-import 'package:football_news/screens/newslist_form.dart'; 
+import 'package:football_news/screens/newslist_form.dart';
+import 'package:football_news/screens/news_entry_list.dart'; 
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -38,11 +39,9 @@ class LeftDrawer extends StatelessWidget {
               ],
             ),
           ),
-          // --- Bagian Routing ---
           ListTile(
             leading: const Icon(Icons.home_outlined),
             title: const Text('Home'),
-            // Navigasi ke halaman utama (MyHomePage)
             onTap: () {
               Navigator.pushReplacement(
                 context,
@@ -55,7 +54,6 @@ class LeftDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.post_add),
             title: const Text('Add News'),
-            // Navigasi ke halaman form
             onTap: () {
               Navigator.push(
                 context,
@@ -65,12 +63,17 @@ class LeftDrawer extends StatelessWidget {
               );
             },
           ),
-          // ListTile untuk "See News" 
           ListTile(
             leading: const Icon(Icons.newspaper),
-            title: const Text('See News'),
+            title: const Text('News List'),
             onTap: () {
-              Navigator.pop(context); 
+              // Route ke news list page
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const NewsEntryListPage(),
+                ),
+              );
             },
           ),
         ],
